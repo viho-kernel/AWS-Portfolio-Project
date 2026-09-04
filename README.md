@@ -1,17 +1,42 @@
-# Portfolio-CI-CD
-This repository contains the CI/CD pipeline for deploying a static AWS portfolio website using Amazon S3 and GitHub Actions.
+# Vihari Reddy — Cloud & DevOps Portfolio
 
-organize the files as follows:
+Source code for my personal portfolio site and its AWS static-site delivery workflow.
 
-- website/
-  - index.html
-  - src/imgs/
-  - src/app.js
-  - src/styles.css
-- deploy/
-  - .github/workflows/deploy.yml
-- README.md
+## About
 
-# Architecture Diagram
+I am a Cloud & DevOps engineer with 4+ years of enterprise operations experience at Cognizant. My hands-on work focuses on AWS infrastructure, Terraform, Ansible, Docker, Kubernetes, CI/CD, and observability.
 
-![Portfolio CIcd drawio (1)](https://github.com/user-attachments/assets/18cd6440-8430-4749-987d-1a47bffb4ac3)
+## What this repository contains
+
+- `website/` — responsive static portfolio site
+- `.github/workflows/` — CI/CD workflow files, where configured
+- `docs/` — architecture and deployment evidence
+
+## Deployment model
+
+The site is designed to be delivered as static content from Amazon S3, with GitHub Actions used to automate deployments. Cloud credentials are supplied through GitHub Actions secrets and are never committed to this repository.
+
+## Featured work
+
+- **PlatformForge** — Docker, Kubernetes, Helm, EKS, Prometheus/Grafana, Trivy
+- **Roboshop platform** — Terraform, Ansible, AWS multi-tier networking, ALB/Auto Scaling
+- **Infrastructure security alerting** — CloudTrail, EventBridge, SNS
+
+## Local preview
+
+```bash
+cd website
+python3 -m http.server 8080
+```
+
+Open http://localhost:8080.
+
+## Security
+
+- Do not commit AWS access keys, account IDs, private endpoints, or resume files containing sensitive personal data.
+- Use GitHub Actions secrets or AWS IAM roles for deployment credentials.
+- Review the repository before every public push.
+
+## Status
+
+The portfolio content is actively being updated to reflect verified projects and experience only.
