@@ -1,0 +1,23 @@
+name: Validate Portfolio Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify HTML files exist
+        run: |
+          test -f website/index.html
+          test -f website/src/styles/styles.css
+          test -f website/src/app.js
+      - name: Block accidental secrets
+        run: |
+          ! git grep -nEI '(aws_access_key_id|aws_secret_access_key|BEGIN (RSA |EC )?PRIVATE KEY)' -- .
